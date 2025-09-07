@@ -18,8 +18,7 @@ class TypstAnnotatedTextBuilder(
   private var mathModeStringCounter = 0
 
   override fun processCharacter() {
-    addMarkup(Regex("\\\\\\."), "")
-    processEscapeCharacter()
+    processEscapeCharacter();
     addMarkup(NO_TEXT_INLINE_MATH_REGEX, "", true)
     processMathBlock()
     processCodeMode()
