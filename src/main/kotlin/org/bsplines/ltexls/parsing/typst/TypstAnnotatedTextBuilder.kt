@@ -47,7 +47,9 @@ class TypstAnnotatedTextBuilder(
     addMarkup(LABEL_REF_REGEX)
     addMarkup(VARIABLE_REGEX, "", true)
 
-    addText(this.curString)
+    if (!this.mathMode) {
+      addText(this.curString)
+    }
   }
 
   override fun addText(text: String?): CharacterBasedCodeAnnotatedTextBuilder {
