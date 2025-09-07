@@ -90,7 +90,8 @@ class TypstAnnotatedTextBuilder(
         // String within math mode to be spell checked
         addText(this.curString)
       } else {
-        addMarkup(this.curString)
+        // Do not spell-check math commands
+        // addMarkup(this.curString)
       }
     }
   }
